@@ -37,7 +37,7 @@ export class ProgressBarComponent implements OnChanges {
     console.log(loading);
 
     this.firstChange = loading.firstChange;
-    if(loading.firstChange && !this.loading){
+    if(this.firstChange && !this.loading){
       return;
     } else{
       if(this.loading !== undefined){
@@ -48,7 +48,6 @@ export class ProgressBarComponent implements OnChanges {
             autoAlpha: 1
           })
         }
-
         this.animateProgress(this.loading);
       }
     }
@@ -63,26 +62,31 @@ export class ProgressBarComponent implements OnChanges {
   private animateProgress(loading: boolean):void{
     const start = () =>{
       let speed = 90;
+      console.log('loading', loading);
       if(this.initialValue < this.endValue){
         if( loading && this.initialValue === 95){
           return;
         }
         if(!loading){
           speed = 5
+          console.log('loading', loading);
         }
-        this.initialValue++
+        this.initialValue++;
         gsap.to(this.progress.nativeElement,{
           width: `${this.initialValue}%`
         });
-        if(this.initialValue === this.endValue && !this.loading){
+        if(this.initialValue === this.endValue && !loading){
           gsap.to(this.progressContainer.nativeElement, {
             delay: 0.2,
-            duration: 0,
-            autoAlpha: 0
+            duration: 0.5, // 투명해지는 애니메이션 적용시간
+            autoAlpha: 0 // opacity와 동일
           });
         }
         this.cdr.detectChanges();
-        setTimeout(start, speed)
+        setTimeout(start, speed);
+        /*  setTimeout(function, delay)
+        함수를 일정시간 뒤에 실행시키고 싶은 경우에 사용
+         */
       }
     };
     start();
