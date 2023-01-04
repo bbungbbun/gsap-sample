@@ -26,6 +26,9 @@ export class ProgressBarComponent implements OnChanges {
   firstChange : boolean | undefined;
 
   @Input() loading: boolean | undefined;
+  @Input() showProgress : boolean | undefined;
+  @Input() barSize : string | undefined;
+
 
   constructor(private cdr: ChangeDetectorRef) { }
 
@@ -51,6 +54,12 @@ export class ProgressBarComponent implements OnChanges {
     }
   }
 
+  setBarSize(){
+    return {
+      height: `${this.barSize}px`,
+    }
+  }
+
   private animateProgress(loading: boolean):void{
     const start = () =>{
       let speed = 90;
@@ -62,11 +71,16 @@ export class ProgressBarComponent implements OnChanges {
           speed = 5
         }
         this.initialValue++
-        gsap.to(this.progressContainer.nativeElement, {
+        gsap.to(this.progress.nativeElement,{
+          width: `${this.initialValue}%`
+        });
+        if(this.initialValue === this.endValue && !this.loading){
+          gsap.to(this.progressContainer.nativeElement, {
             delay: 0.2,
             duration: 0,
             autoAlpha: 0
-        });
+          });
+        }
         this.cdr.detectChanges();
         setTimeout(start, speed)
       }

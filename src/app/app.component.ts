@@ -21,12 +21,12 @@ export class AppComponent implements OnInit{
 
     timer(1000).subscribe((_)=>(this.loading = true))
     timer(3000).subscribe((_)=>(this.loading = false))
-
-    timer(4000).subscribe((_)=>(this.loading = true))
-    timer(6000).subscribe((_)=>(this.loading = false))
-
-    timer(7000).subscribe((_)=>(this.loading = true))
-    timer(9000).subscribe((_)=>(this.loading = false))
+    //
+    // timer(4000).subscribe((_)=>(this.loading = true))
+    // timer(6000).subscribe((_)=>(this.loading = false))
+    //
+    // timer(7000).subscribe((_)=>(this.loading = true))
+    // timer(9000).subscribe((_)=>(this.loading = false))
   }
 
 }
