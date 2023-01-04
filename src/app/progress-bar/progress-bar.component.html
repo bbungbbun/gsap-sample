@@ -4,8 +4,7 @@
   <div class="progress__wrapper" [ngStyle]="setBarSize()">
     <div class="progress__element" #progress>
       <div class="progress__element--counter"
-           *ngIf="initialValue !== 0 && showProgress"
-      >
+           *ngIf="initialValue !== 0 && showProgress">
         {{ initialValue }}%
       </div>
     </div>

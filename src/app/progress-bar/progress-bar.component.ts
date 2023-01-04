@@ -34,7 +34,7 @@ export class ProgressBarComponent implements OnChanges {
 
 
   ngOnChanges({ loading } : { loading : SimpleChange }) {
-    console.log(loading)
+    console.log(loading);
 
     this.firstChange = loading.firstChange;
     if(loading.firstChange && !this.loading){
