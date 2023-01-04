@@ -62,14 +62,12 @@ export class ProgressBarComponent implements OnChanges {
   private animateProgress(loading: boolean):void{
     const start = () =>{
       let speed = 90;
-      console.log('loading', loading);
       if(this.initialValue < this.endValue){
         if( loading && this.initialValue === 95){
           return;
         }
         if(!loading){
           speed = 5
-          console.log('loading', loading);
         }
         this.initialValue++;
         gsap.to(this.progress.nativeElement,{

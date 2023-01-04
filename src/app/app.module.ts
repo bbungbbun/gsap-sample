@@ -7,7 +7,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
   ],
   imports: [
     BrowserModule,
