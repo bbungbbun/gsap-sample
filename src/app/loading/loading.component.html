@@ -1,0 +1,20 @@
+<div class="progress" #progressContainer>
+  <div class="progress__wrapper" [ngStyle]="setBarSize()">
+    <div class="progress__element" #progress>
+      <div class="progress__element--counter"
+           *ngIf="initialValue !== 0 && showProgress">
+        {{ initialValue }}%
+      </div>
+<!--      <div class="text">-->
+<!--        LOADING...-->
+<!--      </div>-->
+      <div class="box">
+        LOADING...
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="background">
+
+</div>

@@ -24,11 +24,11 @@ export class AppComponent implements OnInit{
     timer(3000).subscribe((_)=>(this.loading = false))
     // 페이지 로딩 후 3초 뒤에 this.loading = false 적용
 
-    timer(4000).subscribe((_)=>(this.loading = true))
-    timer(6000).subscribe((_)=>(this.loading = false))
-
-    timer(7000).subscribe((_)=>(this.loading = true))
-    timer(9000).subscribe((_)=>(this.loading = false))
+    // timer(4000).subscribe((_)=>(this.loading = true))
+    // timer(6000).subscribe((_)=>(this.loading = false))
+    //
+    // timer(7000).subscribe((_)=>(this.loading = true))
+    // timer(9000).subscribe((_)=>(this.loading = false))
   }
 
 }

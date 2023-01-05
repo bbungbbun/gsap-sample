@@ -26,6 +26,17 @@
   }
 }
 
+.text{
+  color: black;
+  font-family: Arial;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 100vh;
+  text-align: center;
+  //mix-blend-mode: difference;
+}
+
+
 .hidden{
   visibility: hidden;
   opacity: 0;
